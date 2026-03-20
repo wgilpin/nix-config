@@ -22,6 +22,7 @@
           environment.systemPackages = with pkgs; [
             uv python313 gh git tailscale 
             claude-code gemini-cli nodejs_22 _1password-cli
+            whatsapp-for-mac
           ];
 
           # 3. GUI Apps
@@ -56,7 +57,7 @@
 
           # 5. Alias
           environment.shellAliases = {
-            rebuild = "sudo nix run nix-darwin -- switch --flake ~/.config/nix-config#MIND-26";
+            rebuild = "sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ~/.config/nix-config#MIND-26";
           };
 
           system.stateVersion = 5;
